@@ -10,10 +10,14 @@ To be able to run this application make sure you have the latest version of [npm
 To install an run the app use 
 ```
 npm install
-``` and 
+``` 
+and 
+
 ```
 npm start
-``` to get the app launched.
+``` 
+
+to get the app launched.
 
 ---
 
