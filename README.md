@@ -14,7 +14,7 @@ To install an run the app use
 
 ### Dependencies
 
-This application is using [React Router](https://www.npmjs.com/package/react-router). A collection of navigational components to make browsing through app intuitive like a HTML application would.
+This application is using [React Router](https://www.npmjs.com/package/react-router). A collection of navigational components to make browsing through app intuitive behave like html.
 
 #### How to use this application
 
