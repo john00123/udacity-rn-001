@@ -11,6 +11,7 @@ To install an run the app use
 ```npm install``` and 
 ```npm start``` to get the app launched.
 
+---
 
 ### Dependencies
 
