@@ -3,7 +3,9 @@
 ### My read app
 #### Requirements
 
-This application has been built using [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) a javascript library mantained by facebook and instagram. To be able to run this application make sure you have the latest version of [npm installed](https://www.npmjs.com) in your machine, this will guarantee proper functionality of the app.
+This application has been built using [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) a javascript library mantained by facebook and instagram. 
+
+To be able to run this application make sure you have the latest version of [npm installed](https://www.npmjs.com) in your machine, this will guarantee proper functionality of the app.
 
 To install an run the app use 
 ```npm install``` and 
