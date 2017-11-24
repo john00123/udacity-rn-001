@@ -7,17 +7,14 @@ This application has been built using [React](https://en.wikipedia.org/wiki/Reac
 
 To be able to run this application make sure you have the latest version of [npm installed](https://www.npmjs.com) in your machine, this will guarantee proper functionality of the app.
 
-To install an run the app use 
+To install an run the app use:
 ```
 npm install
 ``` 
-and 
 
 ```
 npm start
 ``` 
-
-to get the app launched.
 
 ---
 
