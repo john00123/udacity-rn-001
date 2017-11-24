@@ -30,13 +30,13 @@ Book-data is coming from the BooksAPI.js file, a JavaScript API for the provided
 Using a dropdown you can assign any books between the following categories:
 
 ``` 
- Want to read 
+-> Want to read 
  ``` 
  ``` 
- Currently reading
+-> Currently reading
  ``` 
  ``` 
- Read
+-> Read
 ```
 
 You can also navigate to a search page that will show all books that match specific queries.
