@@ -21,7 +21,7 @@ class BooksCatalog extends Component{
     const {books} = this.props
     return(
       categories.map((category)=>(
-        <div className = 'shelf' key = {category}>
+        <div className = 'shelf' key = {category.title}>
           <h1 className = 'shelf-title'>{category.title}</h1>
 
           {books
