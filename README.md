@@ -20,7 +20,7 @@ npm start
 
 ### Dependencies
 
-This application is using [React Router](https://www.npmjs.com/package/react-router). A collection of navigational components to make browsing through app intuitive behave like html.
+This application is using [React Router](https://www.npmjs.com/package/react-router). A collection of navigational components to make browsing through app behaviour consistent to and HTML application.
 
 #### How to use this application
 
