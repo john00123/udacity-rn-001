@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import BookSelect from './BookSelect'
 import { Link } from 'react-router-dom'
 
 const categories = [
@@ -13,35 +14,39 @@ const categories = [
   }
 ]
 
+
+
 class BooksCatalog extends Component{
   render(){
+    const {books} = this.props
     return(
       categories.map((category)=>(
-        <div className = 'shelf' key={category}>
+        <div className = 'shelf' key = {category}>
           <h1 className = 'shelf-title'>{category.title}</h1>
-          {this.props.books
-            .filter(books => category.id === books.shelf)
-            .map(books => (
-              <div className = 'book' key = {books.id}>
-                <img src = {books.imageLinks.thumbnail}/>
-                <h3>{books.title}</h3>
-                <p>{books.authors[0]}</p>
 
+          {books
+          .filter(books => category.id === books.shelf)
+          .map(books => (
+            <div className = 'book' key = {books.id}>
+              <img src = {books.imageLinks.thumbnail}/>
+              <h3>{books.title}</h3>
+              <p>{books.authors[0]}</p>
 
+              <select id = {books.identifier} value = {books.shelf}>
+                <optgroup label='Assing to'>
+                  {categories.map(category => (
+                    <option key = {category.id} value = {category.id}>
+                      {category.title}
+                    </option>
+                  ))}
+                </optgroup>
+              </select>
+              
+            </div>
+          ))}
 
-                <select id = {books.identifier}>
-                  <optgroup label='Assing to'>
-                    <option id = {categories[0].title} >{categories[0].title}</option>
-                    <option id = {categories[1].title}>{categories[1].title}</option>
-                    <option id = {categories[2].title}>{categories[2].title}</option>
-                  </optgroup>
-                </select>
-              </div>
-            ))}
         </div>
-
       ))
-
     )
   }
 
