@@ -1,21 +1,52 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
+import logo from './logo.svg'
+import './App.css'
+import * as BooksAPI from './BooksAPI'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+//components
+import SearchBook from './SearchBook'
+import BooksCatalog from './BooksCatalog'
+
+class App extends Component{
+
+  //defines state data
+
+  state = {
+    books: []
+  }
+
+
+  // method runs after load
+
+  componentDidMount(){
+    BooksAPI.getAll().then((books) => {
+      this.setState({books})
+    })
+  }
+
+  // searchBook(){
+  // }
+
+  render(){
+    return(
+      <div className = 'My-books-app'>
+
+        <Route exact path = '/' render = {() =>(
+          <BooksCatalog
+            books = {this.state.books}
+          />
+        )}/>
+
+        <Route path = '/search' render = {({history}) =>(
+          <SearchBook/>
+        )}/>
+
       </div>
-    );
+    )
   }
 }
+
+
 
 export default App;
