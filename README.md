@@ -22,7 +22,7 @@ npm start
 
 This application is using [React Router](https://www.npmjs.com/package/react-router). A collection of navigational components to make browsing through app behaviour consistent to and HTML application.
 
-#### How to use this application
+#### How to use this app
 
 This is an application that allows you to select books into different categories. 
 Book-data is coming from the BooksAPI.js file, a JavaScript API for the provided Udacity backend.
