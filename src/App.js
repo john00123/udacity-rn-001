@@ -10,8 +10,6 @@ import BooksCatalog from './BooksCatalog'
 
 class App extends Component{
 
-  //defines state data
-
   state = {
     books: []
   }
@@ -20,13 +18,19 @@ class App extends Component{
   // method runs after load
 
   componentDidMount(){
-    BooksAPI.getAll().then((books) => {
+    BooksAPI.getAll().then(books => {
       this.setState({books})
     })
   }
 
-  // searchBook(){
-  // }
+  updateBookList = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(() => {
+      BooksAPI.getAll().then((books) => {
+        this.setState({books})
+      })
+    })
+  }
+
 
   render(){
     return(
@@ -35,6 +39,7 @@ class App extends Component{
         <Route exact path = '/' render = {() =>(
           <BooksCatalog
             books = {this.state.books}
+            onSelectChange = {this.updateBookList}
           />
         )}/>
 

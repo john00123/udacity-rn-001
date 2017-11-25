@@ -32,16 +32,22 @@ class BooksCatalog extends Component{
               <h3>{books.title}</h3>
               <p>{books.authors[0]}</p>
 
-              <select id = {books.identifier} value = {books.shelf}>
+              <select
+                id = {books.identifier}
+                value = {books.shelf}
+                onChange = {(event) => this.props.onSelectChange(books, event.target.value)}
+              >
                 <optgroup label='Assing to'>
                   {categories.map(category => (
-                    <option key = {category.id} value = {category.id}>
+                    <option
+                      key = {category.id}
+                      value = {category.id}>
                       {category.title}
                     </option>
                   ))}
                 </optgroup>
               </select>
-              
+
             </div>
           ))}
 
