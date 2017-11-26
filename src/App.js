@@ -41,21 +41,20 @@ class App extends Component{
     })
   }
 
-
-  // updatelist method
-
   updateBookList = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       BooksAPI.getAll().then((books) => {
         this.setState({books})
       })
     })
+
   }
 
   searchBooks = (query, maxresults) => {
     BooksAPI.search (query, maxresults).then((books) => {
       this.setState({books})
     })
+
   }
 
   render(){

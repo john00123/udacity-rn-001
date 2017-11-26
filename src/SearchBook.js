@@ -13,6 +13,7 @@ class SearchBook extends Component{
         </input>
 
         {this.props.books
+          .filter(books=>books.shelf === undefined)
           .map(books => (
             <BookComponent
               books = {books}
