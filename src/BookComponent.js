@@ -6,11 +6,14 @@ class BookComponent extends Component{
 
     return(
 
-    <div className = 'book' key = {this.props.books.id}>
+    <div
+      className = 'book'
+      key = {this.props.books.id}
+    >
       <img src = {this.props.books.imageLinks.thumbnail}/>
-      <h3>{this.props.books.title}</h3>
-
-      <select
+      <h5>{this.props.books.title}</h5>
+      <p>{this.props.books.authors}</p>
+      <select className='dropdown'
         id = {this.props.books.identifier}
         value = {this.props.books.shelf !== undefined ? this.props.books.shelf : 'none'}
         onChange = {(event) => this.props.onSelectChange(this.props.books, event.target.value)}
@@ -30,5 +33,6 @@ class BookComponent extends Component{
     )
   }
 }
+
 
 export default BookComponent

@@ -24,7 +24,7 @@ class App extends Component{
     { 'title':'Will Read',
       'id':'wantToRead'
     },
-    { 'title':'Read',
+    { 'title':'Have Read',
       'id':'read'
     },
     { 'title':'None',
@@ -36,9 +36,9 @@ class App extends Component{
   // lifecycle method runs after load
 
   componentDidMount(){
-    BooksAPI.getAll().then(books => {
+    BooksAPI.getAll().then(books => (
       this.setState({books})
-    })
+    ))
   }
 
   updateBookList = (book, shelf) => {
@@ -47,14 +47,17 @@ class App extends Component{
         this.setState({books})
       })
     })
+  }
 
+  success = (book) => {
+    alert( book.title + ' has been succesfully added')
   }
 
   searchBooks = (query, maxresults) => {
-    BooksAPI.search (query, maxresults).then((books) => {
-      this.setState({books})
-    })
-
+    if(this.props.books === undefined) {BooksAPI.search (query, maxresults).then((books) => {
+    this.setState({books})
+      })
+    }
   }
 
   render(){
@@ -78,7 +81,11 @@ class App extends Component{
           <SearchBook
             books = {this.state.books}
             categories = {this.categories}
-            onSelectChange = {this.updateBookList}
+            onSelectChange = {(book,shelf) => {
+              this.updateBookList(book,shelf)
+              history.push('/')
+              this.success(book)
+            }}
             onInputChange = {this.searchBooks}
           />
         )}/>

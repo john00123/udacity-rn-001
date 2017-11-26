@@ -7,22 +7,31 @@ class SearchBook extends Component{
   render(){
     return(
       <div className='search-page'>
+        <Link
+          to = '/'
+          className = 'back'
+          onClick ={this.props.books}
+          >
+          ✕
+        </Link>
         <input
-        className = 'search-input'
-        onChange = {(event) => this.props.onInputChange(event.target.value, 20)}>
+          placeholder = 'Search Books'
+          className = 'search-input'
+          onChange = {(event) => this.props.onInputChange(event.target.value, 20)}>
         </input>
 
+
         {this.props.books
-          .filter(books=>books.shelf === undefined)
+          .filter((books) => books.shelf === undefined)
           .map(books => (
             <BookComponent
               books = {books}
               categories = {this.props.categories}
               onSelectChange = {this.props.onSelectChange}
             />
+          ))
+        }
 
-        )
-      )}
       </div>
     )
   }

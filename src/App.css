@@ -1,12 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Suranna');
+
+
+body{
+padding: 60px;
+background-color: #F7F9FA;
+text-rendering: geometricPrecision;
+-webkit-font-smoothing: antialiased;
+max-width: 1160px;
+margin: auto;
+}
+
+h1, h2, h3{ font-family: 'Surana', serif; }
+
+h1{
+  font-weight: lighter;
+  font-size: 48px;
+  margin-bottom: 0;
+  line-height: 42px;
+}
+
+.book h5, .book p{
+  width: 100%;
+  text-align: center;
+}
+
+.book h5{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color:#1A2733;
+  margin-bottom: 0;
+}
+
+p{
+  color: #647382;
+}
+
+.hero{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+}
+
+.hero p {
+  line-height: 1.5;
+}
+.header{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.book p{
+  font-size: 14px;
+}
+
+.new-book{
+  margin-top: 20px;
+  width: 150px;
+  text-align: center;
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  border-radius: 3px;
+  padding: 12px 16px;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.new-book:hover{
+  background-color: #0070E0;
+  box-shadow: 0 9px 9px 0 rgba(0,112,232, 0.1),
+  0 6px 6px 0 rgba(0,112,232, 0.1),
+  0 3px 3px 0 rgba(0,112,232, 0.1);}
+
 .shelf, .search-page{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  }
+}
 
-.shelf-title, .search-input{
+.shelf-title{
   display: block;
-  background-color: #f2f3f4;
+  width: 100%;
+  position: relative;
+  color: #687786;
+  font-weight: 400;
+}
+
+.shelf-title::after{
+  position: absolute;
+  content:'';
+  background-color: #E6E8EB;
+  top: 10px;
+  left: 100px;
+  height: 1px;
+  width: calc(100% - 100px);
+}
+
+.search-input{
+  display: block;
+  background-color:white;
   width: 100%;
 }
 
@@ -14,13 +110,114 @@ img{
   width: 130px;
   height: 180px;
   border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .book{
   margin:20px;
-  width: 180px;
+  width: 250px;
+  background-color: white;
+  border-radius:4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02),
+	0 3px 3px 0 rgba(0, 0, 0, 0.02),
+	0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+}
+
+.book:hover{
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.04),
+  0 6px 6px 0 rgba(0, 0, 0, 0.04),
+  0 3px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.book::after{
+  content: '▾';
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  height: 20px;
+  width: 20px;
+  display: block;
+  pointer-events: none;
+  font-size: 16px;
+  color: #6B7987;
+  transition: color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+.book:hover::after{
+  color:#0070E0;
+}
+
+.dropdown{
+  -webkit-appearance: none;
+  height: 22px;
+  width: 22px;
+  font-family: arial;
+  position: absolute;
+  right:10px;
+  top:10px;
+  color:transparent;
+  background-color: white;
+  outline: none;
+  border: none;
+}
+
+.dropdown:hover{
+  cursor: pointer;
+}
+
+
+.back{
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  width: calc(100% - 40px);
+  text-decoration: none;
+  transition: color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: #6B7987;
+  font-size: 20px;
+}
+
+.back:hover{
+  color: #0070E0;
+  cursor: pointer;
 }
 
 .search-input{
-  font-size: 40px;
+  font-size: 24px;
+  font-weight: 300;
+  height: 30px;
+  border-radius: 4px;
+  border:none;
+  background-color: white;
+  box-sizing: content-box;
+  padding: 15px;
+  border: 1px solid white;
+  margin: 20px;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02),
+	0 3px 3px 0 rgba(0, 0, 0, 0.02),
+	0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  outline: none;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.search-input:focus{
+  border: 1px solid #8EAAEE;
+  box-shadow: 0 9px 9px 0 rgba(0,112,232, 0.1),
+  0 6px 6px 0 rgba(0,112,232, 0.1),
+  0 3px 3px 0 rgba(0,112,232, 0.1);
+}
+
+@media only screen and (max-width: 600px) {
+    .book {
+      width: 100%;
+    }
 }
