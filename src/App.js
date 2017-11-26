@@ -8,20 +8,41 @@ import * as BooksAPI from './BooksAPI'
 import SearchBook from './SearchBook'
 import BooksCatalog from './BooksCatalog'
 
+
+
+
 class App extends Component{
 
   state = {
     books: []
   }
 
+  categories = [
+    { 'title':'Must Read',
+      'id':'currentlyReading'
+    },
+    { 'title':'Will Read',
+      'id':'wantToRead'
+    },
+    { 'title':'Read',
+      'id':'read'
+    },
+    { 'title':'None',
+      'id':'none'
+    }
 
-  // method runs after load
+  ]
+
+  // lifecycle method runs after load
 
   componentDidMount(){
     BooksAPI.getAll().then(books => {
       this.setState({books})
     })
   }
+
+
+  // updatelist method
 
   updateBookList = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
@@ -31,20 +52,36 @@ class App extends Component{
     })
   }
 
+  searchBooks = (query, maxresults) => {
+    BooksAPI.search (query, maxresults).then((books) => {
+      this.setState({books})
+    })
+  }
 
   render(){
     return(
       <div className = 'My-books-app'>
 
+        {/** Books Catalog Component**/}
+
         <Route exact path = '/' render = {() =>(
           <BooksCatalog
             books = {this.state.books}
             onSelectChange = {this.updateBookList}
+            categories = {this.categories}
           />
         )}/>
 
+
+        {/** Search Catalog Component**/}
+
         <Route path = '/search' render = {({history}) =>(
-          <SearchBook/>
+          <SearchBook
+            books = {this.state.books}
+            categories = {this.categories}
+            onSelectChange = {this.updateBookList}
+            onInputChange = {this.searchBooks}
+          />
         )}/>
 
       </div>

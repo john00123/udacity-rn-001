@@ -1,20 +1,26 @@
-.shelf{
+.shelf, .search-page{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   }
 
-.shelf-title{
+.shelf-title, .search-input{
   display: block;
   background-color: #f2f3f4;
   width: 100%;
 }
 
 img{
-  height: 150px;
+  width: 130px;
+  height: 180px;
+  border-radius: 4px;
 }
 
 .book{
   margin:20px;
   width: 180px;
+}
+
+.search-input{
+  font-size: 40px;
 }
