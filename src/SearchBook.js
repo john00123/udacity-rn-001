@@ -10,10 +10,8 @@ class SearchBook extends Component{
         <Link
           to = '/'
           className = 'back'
-          onClick = {this.props.books}
-          >
-          ✕
-        </Link>
+          onClick = {this.props.refresh}
+        > ✕ </Link>
 
         <input
           placeholder = 'Search Books'
@@ -21,16 +19,14 @@ class SearchBook extends Component{
           onChange = {(event) => this.props.onInputChange(event.target.value, 20)}>
         </input>
 
-
-        {this.props.books
-          .filter((books) => books.shelf === undefined)
-          .filter((books) => books.imageLinks.thumbnail !== undefined)
-          .map(books => (
+        {this.props.books.map(books => (
+            books.shelf === undefined ?
             <BookComponent
+              key = {Math.random()}
               books = {books}
               categories = {this.props.categories}
               onSelectChange = {this.props.onSelectChange}
-            />
+            /> : ''
           ))
         }
 

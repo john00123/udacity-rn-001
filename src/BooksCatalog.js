@@ -17,31 +17,30 @@ class BooksCatalog extends Component{
           <p> Organize your favorite books into collections.<br/> Keep track of their progress. </p>
           <Link
             to = '/search'
-            onClick = {this.props.onSelectChange}
             className = 'new-book'>
             Add a new Book
           </Link>
         </div>
 
         {this.props.categories
-        .filter(category => category.id !== 'none')
-        .map((category)=>(
+        .map(category  => (category.id !== 'none' ?
           <div className = 'shelf' key = {category.id}>
             <h4 className = 'shelf-title'>{category.title}</h4>
-            {this.props.books
-            .filter(books => category.id === books.shelf)
-            .map(books => (
+            {this.props.books.map(books => (
+              category.id === books.shelf ?
               <BookComponent
+                key = {Math.random()}
                 books = {books}
                 categories = {this.props.categories}
                 shelf = {category}
                 onSelectChange = {this.props.onSelectChange}
-              />
+              /> : ''
+              )
+            )}
 
-            ))}
-
-          </div>
+          </div> : ''
         ))}
+
       </div>
     )
   }

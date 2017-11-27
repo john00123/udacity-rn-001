@@ -8,8 +8,6 @@ import SearchBook from './SearchBook'
 import BooksCatalog from './BooksCatalog'
 
 
-
-
 class App extends Component{
 
   state = {
@@ -35,9 +33,15 @@ class App extends Component{
   // lifecycle method runs after load
 
   componentDidMount(){
-    BooksAPI.getAll().then(books => (
+    BooksAPI.getAll().then(books => {
       this.setState({books})
-    ))
+    })
+  }
+
+  refreshView = () => {
+    BooksAPI.getAll().then(books => {
+      this.setState({books})
+    })
   }
 
   updateBookList = (book, shelf) => {
@@ -54,7 +58,7 @@ class App extends Component{
 
   searchBooks = (query, maxresults) => {
     query && BooksAPI.search (query, maxresults).then((books) => {
-    this.setState({books})
+      this.setState({books})
       })
     }
 
@@ -78,6 +82,7 @@ class App extends Component{
 
         <Route path = '/search' render = {({history}) =>(
           <SearchBook
+            refresh = {this.refreshView}
             books = {this.state.books}
             categories = {this.categories}
             onSelectChange = {(book,shelf) => {
