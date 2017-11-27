@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import logo from './logo.svg'
 import './App.css'
 import * as BooksAPI from './BooksAPI'
 
@@ -54,11 +53,11 @@ class App extends Component{
   }
 
   searchBooks = (query, maxresults) => {
-    if(this.props.books === undefined) {BooksAPI.search (query, maxresults).then((books) => {
+    query && BooksAPI.search (query, maxresults).then((books) => {
     this.setState({books})
       })
     }
-  }
+
 
   render(){
     return(

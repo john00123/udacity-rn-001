@@ -10,10 +10,11 @@ class SearchBook extends Component{
         <Link
           to = '/'
           className = 'back'
-          onClick ={this.props.books}
+          onClick = {this.props.books}
           >
           ✕
         </Link>
+
         <input
           placeholder = 'Search Books'
           className = 'search-input'
@@ -23,6 +24,7 @@ class SearchBook extends Component{
 
         {this.props.books
           .filter((books) => books.shelf === undefined)
+          .filter((books) => books.imageLinks.thumbnail !== undefined)
           .map(books => (
             <BookComponent
               books = {books}

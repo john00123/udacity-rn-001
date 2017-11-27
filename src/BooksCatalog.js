@@ -26,7 +26,7 @@ class BooksCatalog extends Component{
         {this.props.categories
         .filter(category => category.id !== 'none')
         .map((category)=>(
-          <div className = 'shelf' key = {category.title}>
+          <div className = 'shelf' key = {category.id}>
             <h4 className = 'shelf-title'>{category.title}</h4>
             {this.props.books
             .filter(books => category.id === books.shelf)
