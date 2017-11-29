@@ -19,7 +19,7 @@ class SearchBook extends Component{
           onChange = {(event) => this.props.onInputChange(event.target.value, 20)}>
         </input>
 
-        {this.props.books.map(books => (
+        {this.props.books.map ? this.props.books.map(books =>
             books.shelf === undefined ?
             <BookComponent
               key = {Math.random()}
@@ -27,7 +27,7 @@ class SearchBook extends Component{
               categories = {this.props.categories}
               onSelectChange = {this.props.onSelectChange}
             /> : ''
-          ))
+          ) : <div className='no-results'> Sorry, no results found.</div>
         }
 
       </div>

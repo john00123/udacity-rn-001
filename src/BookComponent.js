@@ -4,16 +4,17 @@ import React, { Component } from 'react'
 class BookComponent extends Component{
 
   render(){
+
     return(
 
     <div
       className = 'book'
-      key = {this.props.books.id}
+      key = {this.props.books.id ? this.props.books.id : 888888}
       >
 
       <img
-      src = {this.props.books.imageLinks.thumbnail}
-      alt = {this.props.books.title}
+      src = {this.props.books.imageLinks? this.props.books.imageLinks.thumbnail : "#"}
+      alt = {this.props.books.title ? this.props.books.title : 'No title' }
       />
 
       <h5>{this.props.books.title}</h5>
