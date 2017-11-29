@@ -39,7 +39,12 @@ Using a dropdown you can assign any books between the following categories:
 · Read
 ```
 
-You can also navigate to a search page that will show all books that match the following supported queries.
+You can add a book which will open a search page.
+
+
+#### Supported Queries
+
+These are the supported queries retrieved from the back-end.
 
 ```
 'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball',
