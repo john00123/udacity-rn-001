@@ -9,12 +9,12 @@ class BookComponent extends Component{
 
     <div
       className = 'book'
-      key = {this.props.books.id ? this.props.books.id : 888888}
+      key = {this.props.books.id}
       >
 
       <img
       src = {this.props.books.imageLinks? this.props.books.imageLinks.thumbnail : "#"}
-      alt = {this.props.books.title ? this.props.books.title : 'No title' }
+      alt = {this.props.books.title}
       />
 
       <h5>{this.props.books.title}</h5>
