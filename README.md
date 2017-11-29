@@ -53,8 +53,8 @@ These are the supported queries retrieved from the back-end.
 `Education`    `Everything`    
 `Fantasy`    `Film`    `Finance`    `First`    `Fitness`    `Football`    `Future`   
 `Games`    `Gandhi`   
-`Homer`    `Horror`    `Hugo`    
-`Ibsen`    `iOS`
+`Homer`    `Horror`    `Hugo`
+`iOS`      `Ibsen`  
 `Journey`   
 `Kafka`    `King`    
 `Lahiri`    `Larsson`    `Learn`    `Literary Fiction`   
