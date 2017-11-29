@@ -55,7 +55,6 @@ These are the supported queries retrieved from the back-end.
 `Games`    `Gandhi`   
 `Homer`    `Horror`    `Hugo`    
 `Ibsen`    `iOS`
-
 `Journey`   
 `Kafka`    `King`    
 `Lahiri`    `Larsson`    `Learn`    `Literary Fiction`   
