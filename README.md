@@ -58,5 +58,4 @@ These are the supported queries retrieved from the back-end.
 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming',
 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 
 'Web Development', 'iOS'
-
 ```
