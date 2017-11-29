@@ -26,7 +26,7 @@ class BooksCatalog extends Component{
         .map(category  => (category.id !== 'none' ?
           <div className = 'shelf' key = {category.id}>
             <h4 className = 'shelf-title'>{category.title}</h4>
-            {this.props.books.map(books => (
+            {this.props.books.map? this.props.books.map(books => (
               category.id === books.shelf ?
               <BookComponent
                 key = {Math.random()}
@@ -36,7 +36,7 @@ class BooksCatalog extends Component{
                 onSelectChange = {this.props.onSelectChange}
               /> : ''
               )
-            )}
+            ) : <div className = 'no-results'>No books founds</div>}
 
           </div> : ''
         ))}

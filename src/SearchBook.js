@@ -16,6 +16,7 @@ class SearchBook extends Component{
         <input
           placeholder = 'Search Books'
           className = 'search-input'
+          autoFocus
           onChange = {(event) => this.props.onInputChange(event.target.value, 20)}>
         </input>
 
