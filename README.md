@@ -39,4 +39,31 @@ Using a dropdown you can assign any books between the following categories:
 · Read
 ```
 
-You can also navigate to a search page that will show all books that match specific queries.
+You can add a book which will open a search page.
+
+
+#### Supported Queries
+
+These are the supported queries retrieved from the back-end.
+
+`Android`    `Art`    `Artificial Intelligence`    `Astronomy`    `Austen`   
+`Baseball`    `Basketball`    `Bhagat`    `Biography`    `Brief`    `Business`   
+`Camus`    `Cervantes`    `Christie`    `Classics`    `Comics`    `Cook`    `Cricket`    `Cycling`    
+`Desai`    `Design`    `Development`    `Digital Marketing`    `Drama`    `Drawing`    `Dumas`   
+`Education`    `Everything`    
+`Fantasy`    `Film`    `Finance`    `First`    `Fitness`    `Football`    `Future`   
+`Games`    `Gandhi`   
+`Homer`    `Horror`    `Hugo`  
+`iOS`      `Ibsen`  
+`Journey`   
+`Kafka`    `King`    
+`Lahiri`    `Larsson`    `Learn`    `Literary Fiction`   
+`Make`    `Manage`    `Marquez`    `Money`    `Mystery`   
+`Negotiate`  
+`Painting`    `Philosophy`    `Photography`    `Poetry`    `Production`    `Programming`   
+`React`    `Redux`    `River`    `Robotics`    `Rowling`   
+`Satire`    `Science Fiction`    `Shakespeare`    `Singh`    `Swimming`    
+`Tale`    `Thrun`    `Time`    `Tolstoy`    `Travel`   
+`Ultimate`   
+`Virtual Reality`   
+`Web Development` 
