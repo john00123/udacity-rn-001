@@ -53,7 +53,7 @@ These are the supported queries retrieved from the back-end.
 `Education`    `Everything`    
 `Fantasy`    `Film`    `Finance`    `First`    `Fitness`    `Football`    `Future`   
 `Games`    `Gandhi`   
-`Homer`    `Horror`    `Hugo`
+`Homer`    `Horror`    `Hugo`  
 `iOS`      `Ibsen`  
 `Journey`   
 `Kafka`    `King`    
